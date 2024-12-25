@@ -1,0 +1,22 @@
+<!-- Test1/templates/home.html -->
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block body %}
+<div>
+    <a href="{%url 'login' %}">logout</a>
+    <form method="post" action="/home/">
+        {% csrf_token %}
+        <table align="center" cellspacing="10" cellpadding="10">
+        <tr>
+            <td>{{Details.as_table}}</td>
+        </tr>
+        <tr>
+            <td><input type="submit"/></td>
+        </tr>
+        </table>
+    </form>
+</div>
+
+{% endblock %}
